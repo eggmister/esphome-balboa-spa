@@ -78,7 +78,8 @@ void BalboaSpaBinarySensors::update(SpaState* spaState) {
             sensor_state_value = (spaState->pump3 > 0);  // Running if not 0 (off)
             break;
         default:
-            ESP_LOGD(TAG, "Unknown binary sensor type: %d", sensor_type);
+           // ESP_LOGD(TAG, "Unknown binary sensor type: %d", sensor_type);
+            ESP_LOGD(TAG, "Unknown binary sensor type: %d", static_cast<int>(sensor_type));
             return;
     }
 
