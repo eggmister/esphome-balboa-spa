@@ -32,7 +32,7 @@ void BalboaSpa::update() {
     
     // Check communication timeout with optimized logic
     if (last_received_time > 0 && (now - last_received_time) > COMMUNICATION_TIMEOUT_MS) {
-        ESP_LOGW(TAG, "No communication for %d seconds - marking as dead!", (now - last_received_time) / 1000);
+        ESP_LOGW(TAG, "No communication for %lu seconds - marking as dead!", (now - last_received_time) / 1000);
         //status_set_error("No Communication with Balboa Mainboard!");
         ESP_LOGE(TAG, "No Communication with Balboa Mainboard!");
         status_set_error();
