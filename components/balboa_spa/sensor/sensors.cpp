@@ -95,7 +95,8 @@ void BalboaSpaSensors::update(SpaState* spaState) {
             sensor_state_value = parent->get_filter2_current_runtime_minutes();
             break;
         default:
-            ESP_LOGD(TAG, "Unknown sensor type: %d", sensor_type);
+           // ESP_LOGD(TAG, "Unknown sensor type: %d", sensor_type);
+            ESP_LOGD(TAG, "Unknown sensor type: %d", static_cast<int>(sensor_type));
             return;
     }
 
